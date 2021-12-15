@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 @AllArgsConstructor
@@ -14,6 +15,7 @@ import javax.persistence.Entity;
 @Setter
 public class Task {
 
+    @Id
     private long id;
     private String name;
     private String description;
