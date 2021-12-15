@@ -19,14 +19,11 @@ public class TaskService {
     TaskFileRepository taskFileRepository;
 
     public Task saveTask(Task newTask) {
-//        System.out.println(taskFileRepository.saveTask(newTask));
         return taskFileRepository.saveTask(newTask);
-//        return taskRepository.save(newTask);
     }
 
     public List<Task> getTasks() {
         System.out.println(taskFileRepository.getTasks());
         return taskFileRepository.getTasks();
-//        return taskRepository.findAll();
     }
 }
