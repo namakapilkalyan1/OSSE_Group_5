@@ -26,4 +26,9 @@ public class TaskService {
         System.out.println(taskFileRepository.getTasks());
         return taskFileRepository.getTasks();
     }
+
+    public Task findById(Long id) {
+        System.out.println(taskFileRepository.findById(id));
+        return taskFileRepository.findById(id);
+    }
 }
