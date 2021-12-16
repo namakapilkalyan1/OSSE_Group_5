@@ -29,5 +29,26 @@ public class TaskController {
         System.out.println("In controller");
         return taskService.saveTask(newTask);
     }
+
+    @GetMapping("/tasks/{id}")
+    public Task getTask(@PathVariable Long id) {
+        return taskService.findById(id);
+    }
+
+    @PutMapping("/tasks/{id}")
+    public Task updateTask(@RequestBody Task newTask, @PathVariable Long id) {
+        if(taskService.findById(id)!=null){
+            taskService.deleteById(id);
+            return taskService.saveTask(newTask);
+        }
+        else{
+            return taskService.saveTask(newTask);
+        }
+    }
+
+    @DeleteMapping("/tasks/{id}")
+    public void deleteTask(@PathVariable Long id) {
+        taskService.deleteById(id);
+    }
    
 }
