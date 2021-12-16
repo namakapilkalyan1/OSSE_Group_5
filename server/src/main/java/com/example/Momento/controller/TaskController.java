@@ -10,8 +10,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/api")
 public class TaskController {
-    // @Autowired
-    // TaskService taskService;
 
     public TaskService taskService;
 
