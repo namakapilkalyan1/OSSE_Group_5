@@ -32,7 +32,7 @@ public class TaskService {
         return taskFileRepository.findById(id);
     }
 
-    public void deleteById(int id) {
+    public void deleteById(Long id) {
         taskFileRepository.deleteById(id);
     }
 }
