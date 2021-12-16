@@ -31,4 +31,8 @@ public class TaskService {
         System.out.println(taskFileRepository.findById(id));
         return taskFileRepository.findById(id);
     }
+
+    public void deleteById(int id) {
+        taskFileRepository.deleteById(id);
+    }
 }
