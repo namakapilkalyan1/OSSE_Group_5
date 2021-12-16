@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+import Header from './components/Header'
+import Tasks from './components/Tasks'
 import AddTask from './components/AddTask'
 import About from './components/About'
 
@@ -15,6 +17,22 @@ const App = () => {
 
     getTasks()
   }, [])
+
+  // Fetch Tasks
+  const fetchTasks = async () => {
+    const res = await fetch('/api/tasks')
+    console.log(res);
+    const data = await res.json()
+
+    return data
+  }
+
+  // Fetch Task
+  const fetchTask = async (id) => {
+    const res = await fetch(`/api/tasks/${id}`)
+    const data = await res.json()
+    return data
+  }
 
   // Add Task
   const addTask = async (task) => {
